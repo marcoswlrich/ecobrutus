@@ -48,6 +48,9 @@ func ExecuteLambda(
 		fmt.Println("Erro ao ler Secret " + err.Error())
 		return event, err
 	}
+
+	err = bd.SignUp(data)
+	return event, err
 }
 
 func ValidateParameters() bool {
